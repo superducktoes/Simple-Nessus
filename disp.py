@@ -1,6 +1,9 @@
 from bottle import *
+from nessusScan import createScanClass
 import requests
 import json
+
+HOST="0.0.0.0"
 
 #replace these with the keys for the account used for scanning
 accessKey = ""
@@ -8,7 +11,6 @@ secretKey = ""
 
 url = "https://cloud.tenable.com/"
 headers = {'X-ApiKeys': 'accessKey=' + str(accessKey) + '; secretKey = ' + str(secretKey) + ';'}
-HOST="0.0.0.0"
 
 #gets a list of available policies
 def listPolicies():
@@ -23,6 +25,7 @@ def listScanners():
 
     return listScanners
 
+
 policies = listPolicies()
 scanners = listScanners()
 
@@ -35,14 +38,39 @@ def serveHome():
 
 @post("/forms")
 def getFormData():
+    scanStatusMessage = " "
     hosts = request.forms.get("hostsToScan")
     scannerID = request.forms.get("scannerID")
     policyID = request.forms.get("policyID")
     
-    return "<p>Scanning Hosts</p>"
+    #strips away any commas and whitespace
+    hosts = hosts.split(",")[0]
+    hosts = hosts.split(" ")[0]
+    
+    newScan = createScanClass(policyID,scannerID,hosts)
 
+    if(newScan):
+        scanStatusMessage = "Scan Launched Successfully"
+    else:
+        scanStatusMessage = "There was a problem with the scan"
+        
+    return scanStatusMessage
 
 @route("/<filepath:path>")
 def server_static(filepath):
     return static_file(filepath, root="./")
+
+
+@route("/help")
+def helper():
+    
+    return template("help_template")
+
+@error(404)
+def error404(error):
+
+    return "<h1>404</h1>"
+
+
+
 run(host=HOST, port=8080, debug=False)

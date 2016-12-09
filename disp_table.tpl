@@ -19,6 +19,7 @@
 <tr>
 	<td> {{r['name']}} </td>
 	<td> {{r['id']}} </td>
+	
 </tr>
 %end
 </table>
@@ -28,11 +29,13 @@
 <tr>
 	<th>Scanner Name</th>
 	<th>Scanner ID  </th>
+	<th>Scanner Status</th>
 </tr>
 %for r in scannerRows:
 <tr>
 	<td> {{r['name']}} </td>
 	<td> {{r['id']}} </td>
+	<td> {{r['status']}} </td>
 </tr>
 %end
 </table>
@@ -47,5 +50,7 @@
 <input value="Launch Scan" type="submit" />
 </form>
 
-
+<br>
+<br>
+<a href="/help">About</a>
 </body>
