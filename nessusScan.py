@@ -1,11 +1,7 @@
 import json
 import requests
-import sys #used for command line arguments
 import time
 
-#replace these with the keys for the account used for scanning
-accessKey = "827a7e8af83d84fad4b56db8f611547f470fad196bb193060d19cded0795b928"
-secretKey = "25afd3344ac1018d645f80c7c9cb84a8b3e0e061252692713b7348b25160eb1e"
 
 url = "https://cloud.tenable.com/"
 headers = {'X-ApiKeys': 'accessKey=' + str(accessKey) + '; secretKey = ' + str(secretKey) + ';'}

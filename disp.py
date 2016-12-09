@@ -1,7 +1,7 @@
 from bottle import *
 from nessusScan import createScanClass
+from mail import Alert
 import requests
-import json
 
 HOST="0.0.0.0"
 
@@ -51,6 +51,9 @@ def getFormData():
 
     if(newScan):
         scanStatusMessage = "Scan Launched Successfully"
+        newEmail = Alert()
+        newEmail.updateRecipient("  ")
+        newEmail.sendEmail() 
     else:
         scanStatusMessage = "There was a problem with the scan"
         
@@ -70,7 +73,5 @@ def helper():
 def error404(error):
 
     return "<h1>404</h1>"
-
-
 
 run(host=HOST, port=8080, debug=False)
