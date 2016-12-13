@@ -5,3 +5,7 @@ body {
     background-position: right top;
     background-size: 194px 194px;
 }
+
+tr:nth-child(even) {
+    background-color:  #ddeaff;
+}

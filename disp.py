@@ -37,6 +37,7 @@ def getFormData():
         scanStatusMessage = "Scan Launched Successfully against  " + str(hosts) + "  and an email has been sent to " + userEmail
         newEmail = Alert()
         newEmail.updateRecipient(userEmail)
+        newEmail.updateSubject("Scan launched against " + str(hosts))
         newEmail.sendEmail() 
     else:
         scanStatusMessage = "There was a problem with the scan"
