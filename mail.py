@@ -22,22 +22,15 @@ class Alert:
     def sendEmail(self):
         message = str(self.message)
         msg = MIMEText(message,'plain')
-        msg['Subject'] = "scan starting soon"
+        msg['Subject'] = "Scan was launched"
         me = self.recipient
         msg['From'] = me
         msg['To'] = me
 
         try:
-            s = smtplib.SMTP(' ',25)
+            s = smtplib.SMTP('',25)
             s.send_message(msg)
             print("email sent")
         except Exception as e:
             print(e)
             print("email was not sent")
-
-
-#leaving this in as a test for right now
-#newEmail = Alert()
-#newEmail.updateRecipient("nroy@tenable.com")
-#newEmail.sendEmail()
-

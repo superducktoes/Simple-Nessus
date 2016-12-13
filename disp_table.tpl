@@ -2,7 +2,7 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
-<title>Nessus Scan</title>
+<title>Nessus Scan Launcher</title>
 </head>
 
 <body>
@@ -44,9 +44,10 @@
 <br>
 
 <form action="/forms" method="POST">
-      IP to Scan: <input name="hostsToScan" type="text" />
+      Host to Scan: <input name="hostsToScan" type="text" />
       Policy ID: <input name="policyID" type="text" />
       Scanner ID: <input name="scannerID" type="text" />
+      Name for Scan: <input name="scanName" type="text" />
 <input value="Launch Scan" type="submit" />
 </form>
 

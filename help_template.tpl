@@ -1,6 +1,6 @@
 <html>
 <h1>Nessus Scan Launcher</h1>
-<h5>Version: 0.2</h5>
+<h5>Version: 0.3</h5>
 <h3>Usage</h3>
 <p>Used to launch scans using the Nessus Cloud Scanner</p>
 <p>The only information that needs to be entered is the host to scan,
@@ -16,6 +16,7 @@ API keys, and the HOST variable if you want to specift a specific interfce. By d
   name field for tracking scan names,
   logging
 </p>
+<p>Source can be found <a href="https://github.com/superducktoes/Simple-Nessus">here</a></p>
 <br>
 <br>
 <a href="/">Back</a>
