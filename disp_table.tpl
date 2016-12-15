@@ -1,5 +1,5 @@
 %# disp_table.tpl
-
+<html>
 <head>
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 <title>Nessus Scan Launcher</title>
@@ -44,14 +44,16 @@
 <br>
 
 <form action="/forms" method="POST">
+      Name for Scan: <input name="scanName" type="text" />
       Host to Scan: <input name="hostsToScan" type="text" />
       Policy ID: <input name="policyID" type="text" />
       Scanner ID: <input name="scannerID" type="text" />
-      Name for Scan: <input name="scanName" type="text" />
 <input value="Launch Scan" type="submit" />
 </form>
+<p>Make sure to wait for confirmation that the scan was launched successfully before closing the page.</p>
 
 <br>
 <br>
 <a href="/help">About</a>
 </body>
+</html>

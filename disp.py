@@ -7,13 +7,14 @@ import requests
 #change this to bind to a specific interface
 HOST="0.0.0.0"
 #change this to the email you want alerts sent to
-userEmail = ""
+userEmail = "nroy@tenable.com"
 
 policies = listPolicies()
 scanners = listScanners()
 
 
 @route("/")
+
 def serveHome():
     return template("disp_table",
                     policyRows=policies,
@@ -31,16 +32,16 @@ def getFormData():
     hosts = hosts.split(",")[0]
     hosts = hosts.split(" ")[0]
     
-    newScan = createScanClass(policyID,scannerID,hosts,scanName)
+    appScan = createScanClass(policyID,scannerID,hosts,scanName)
 
-    if(newScan):
+    if(appScan):
         scanStatusMessage = "Scan Launched Successfully against  " + str(hosts) + "  and an email has been sent to " + userEmail
         newEmail = Alert()
         newEmail.updateRecipient(userEmail)
         newEmail.updateSubject("Scan launched against " + str(hosts))
         newEmail.sendEmail() 
     else:
-        scanStatusMessage = "There was a problem with the scan"
+        scanStatusMessage = "There was a problem launching the scan. Please go back and check the ID's and host to scan"
         
     return scanStatusMessage
 

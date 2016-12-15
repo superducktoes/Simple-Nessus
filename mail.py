@@ -1,6 +1,12 @@
 import smtplib
 from email.mime.text import MIMEText
 
+#update these variables as needed
+
+mailServer = "netservices3.lab.tenablesecurity.com"
+mailPort = 25
+
+
 #alert class. Doesn't take any arguments when being created. 
 
 class Alert:
@@ -32,9 +38,8 @@ class Alert:
         msg['To'] = me
         
         try:
-            s = smtplib.SMTP('',25)
+            s = smtplib.SMTP(mailServer,mailPort)
             s.send_message(msg)
-            print("email sent")
         except Exception as e:
             print(e)
             print("email was not sent")

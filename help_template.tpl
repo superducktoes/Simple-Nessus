@@ -1,6 +1,6 @@
 <html>
 <h1>Nessus Scan Launcher</h1>
-<h5>Version: 0.3</h5>
+<h5>Version: 0.4</h5>
 <h3>Usage</h3>
 <p>Used to launch scans using the Nessus Cloud Scanner</p>
 <p>The only information that needs to be entered is the host to scan,
