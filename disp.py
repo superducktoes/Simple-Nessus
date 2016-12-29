@@ -7,7 +7,7 @@ import requests
 #change this to bind to a specific interface
 HOST="0.0.0.0"
 #change this to the email you want alerts sent to
-userEmail = "nroy@tenable.com"
+userEmail = "userEmailReplace"
 
 policies = listPolicies()
 scanners = listScanners()

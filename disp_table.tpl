@@ -54,6 +54,6 @@
 
 <br>
 <br>
-<a href="/help">About</a>
+<a href="/help">About</a><a href="/forms">  Refresh Scanners/Policies</a>
 </body>
 </html>

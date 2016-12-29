@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 #update these variables as needed
 
-mailServer = "netservices3.lab.tenablesecurity.com"
+mailServer = "mailServerReplace"
 mailPort = 25
 
 
